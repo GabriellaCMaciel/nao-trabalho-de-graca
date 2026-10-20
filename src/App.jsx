@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import Breakdown from './components/Breakdown.jsx'
 import CltCard from './components/CltCard.jsx'
 import InputForm from './components/InputForm.jsx'
+import ProjectCard from './components/ProjectCard.jsx'
 import RegimeComparison from './components/RegimeComparison.jsx'
 import MeiAlert from './components/MeiAlert.jsx'
 import PriceHero from './components/PriceHero.jsx'
@@ -9,16 +10,21 @@ import { calculatePricing } from './domain/pricing.js'
 import { ENTRADAS_PADRAO, validateInputs } from './domain/validation.js'
 import './styles/layout.css'
 
+const CAMPOS_DO_PROJETO = ['projectHours', 'riskMargin']
+
 export default function App() {
   const [form, setForm] = useState(ENTRADAS_PADRAO)
   const [touched, setTouched] = useState({})
 
   const validation = useMemo(() => validateInputs(form), [form])
 
+  // Erro nos campos do projeto não deve esconder o preço por hora: eles só afetam o cartão do projeto.
+  const coreValid = Object.keys(validation.errors).every((campo) => CAMPOS_DO_PROJETO.includes(campo))
+
   // O cálculo só roda com dados válidos; useMemo evita refazer a conta a cada renderização.
   const pricing = useMemo(
-    () => (validation.isValid ? calculatePricing(validation.values) : null),
-    [validation],
+    () => (coreValid ? calculatePricing(validation.values) : null),
+    [coreValid, validation],
   )
 
   // Só mostramos o erro de um campo depois que a pessoa mexeu nele.
@@ -57,6 +63,16 @@ export default function App() {
                 grossMonthly={pricing.selected.grossMonthly}
                 desiredNet={validation.values.desiredNet}
               />
+              {pricing.selected.hourly && (
+                <ProjectCard
+                  hourly={pricing.selected.hourly}
+                  values={validation.values}
+                  form={form}
+                  errors={visibleErrors}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              )}
               <RegimeComparison
                 byRegime={pricing.byRegime}
                 best={pricing.best}

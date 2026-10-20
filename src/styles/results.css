@@ -289,3 +289,9 @@
   font-size: 1.2em;
   font-weight: 400;
 }
+
+.project__total {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
