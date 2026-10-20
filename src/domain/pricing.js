@@ -1,3 +1,4 @@
+import { calculateCltEquivalent } from './clt.js'
 import { ceil2 } from './money.js'
 import { calculateRegime } from './regimes/index.js'
 import { meiLimitStatus } from './regimes/meiLimit.js'
@@ -58,5 +59,12 @@ export function calculatePricing(v) {
   const viaveis = Object.values(byRegime).filter((r) => r.feasible)
   const best = viaveis.length ? viaveis.reduce((a, b) => (b.hourly < a.hourly ? b : a)).regime : null
 
-  return { workload, byRegime, best, selected: byRegime[v.regime] }
+  return {
+    workload,
+    byRegime,
+    best,
+    selected: byRegime[v.regime],
+    /** Salário CLT que entregaria o mesmo valor no ano (13º, férias e FGTS incluídos). */
+    clt: calculateCltEquivalent(v.desiredNet),
+  }
 }

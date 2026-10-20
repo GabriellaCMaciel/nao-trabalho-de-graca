@@ -62,6 +62,12 @@ describe('calculatePricing', () => {
     expect(r.byRegime[r.best].hourly).toBe(menor)
   })
 
+  it('inclui o salário CLT equivalente ao líquido desejado', () => {
+    const r = calculatePricing(entradas({ desiredNet: '5000' }))
+    expect(r.clt.salario).toBeGreaterThan(3000)
+    expect(r.clt.salario).toBeLessThan(5000)
+  })
+
   it('com líquido alto, o MEI sai da disputa e o melhor é outro regime', () => {
     const r = calculatePricing(entradas({ desiredNet: '12000' }))
     expect(r.byRegime.mei.feasible).toBe(false)

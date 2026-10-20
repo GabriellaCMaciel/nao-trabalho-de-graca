@@ -49,6 +49,12 @@ export const IRPF_FAIXAS = [
   { ate: Infinity, aliquota: 0.275, deduzir: 908.73 },
 ]
 
+/** Desconto simplificado mensal (25% do limite de isenção): a folha usa se for maior que o INSS. */
+export const IRPF_DESCONTO_SIMPLIFICADO = 607.2
+
+/** FGTS: o empregador deposita 8% de tudo que paga ao empregado (salário, 13º e 1/3 de férias). */
+export const FGTS_ALIQUOTA = 0.08
+
 /** Redutor de 2026: zera o imposto até R$ 5.000 e diminui gradualmente até R$ 7.350. */
 export const IRPF_REDUTOR = {
   ISENCAO_ATE: 5000,
