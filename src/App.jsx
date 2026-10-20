@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import Breakdown from './components/Breakdown.jsx'
 import CltCard from './components/CltCard.jsx'
 import InputForm from './components/InputForm.jsx'
+import PriceBar from './components/PriceBar.jsx'
 import ProjectCard from './components/ProjectCard.jsx'
 import RegimeComparison from './components/RegimeComparison.jsx'
 import MeiAlert from './components/MeiAlert.jsx'
@@ -48,9 +49,11 @@ export default function App() {
         </p>
       </header>
 
+      {pricing?.selected.hourly && <PriceBar hourly={pricing.selected.hourly} />}
+
       <div className="layout">
         <InputForm form={form} errors={visibleErrors} onChange={handleChange} onBlur={handleBlur} />
-        <section className="results" aria-label="Resultado">
+        <section className="results" id="resultado" aria-label="Resultado">
           {pricing ? (
             <>
               <PriceHero result={pricing.selected} workload={pricing.workload} />
