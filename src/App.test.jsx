@@ -6,7 +6,7 @@ import App from './App.jsx'
 describe('formulário', () => {
   it('renderiza o título e os campos principais', () => {
     render(<App />)
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/quanto cobrar por hora/i)
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/não trabalho de graça/i)
     expect(screen.getByLabelText('Líquido por mês')).toHaveValue('5000')
     expect(screen.getByLabelText('Custos fixos por mês')).toBeInTheDocument()
   })

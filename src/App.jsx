@@ -43,9 +43,9 @@ export default function App() {
   return (
     <div className="page">
       <header className="masthead">
-        <h1>Quanto cobrar por hora</h1>
+        <h1>Não trabalho de graça</h1>
         <p>
-          Diga quanto quer ganhar limpo no mês. A conta devolve o preço por hora, já com imposto, férias e o
+          Calculadora de preço por hora para freelancers. Diga quanto quer ganhar limpo no mês. A conta devolve o preço por hora, já com imposto, férias e o
           tempo que você não consegue cobrar.
         </p>
       </header>

@@ -1,4 +1,6 @@
-# Calculadora de preço por hora para freelancers
+# Não Trabalho de Graça
+
+Calculadora de preço por hora para freelancers brasileiros.
 
 Você diz quanto quer ganhar **limpo** no mês. A calculadora devolve quanto cobrar por hora, por dia e por projeto, já com imposto, férias, custos e o tempo que você não consegue faturar.
 
