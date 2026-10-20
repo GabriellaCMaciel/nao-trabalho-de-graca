@@ -73,7 +73,13 @@ export default function InputForm({ form, errors, onChange, onBlur }) {
           {...campo('fixedCosts')}
           label="Custos fixos por mês"
           prefix="R$"
-          hint="Internet, ferramentas, contador, coworking. Tudo que você paga para trabalhar."
+          hint="Internet, ferramentas, coworking. Tudo que você paga para trabalhar."
+        />
+        <Field
+          {...campo('accountantCost')}
+          label="Contador, se for Simples Nacional"
+          prefix="R$"
+          hint="Empresa no Simples precisa de contador. Pergunte o valor mensal e coloque aqui. MEI e autônomo não usam."
         />
       </fieldset>
 

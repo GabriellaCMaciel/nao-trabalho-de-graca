@@ -43,6 +43,15 @@ describe('priceForRegime', () => {
     expect(pb).toBeLessThan(pa)
   })
 
+  it('o contador só pesa no Simples Nacional', () => {
+    const sem = entradas({ accountantCost: '0' })
+    const com = entradas({ accountantCost: '300' })
+    const w = calculateWorkload(sem)
+    expect(priceForRegime('simples', com, w).hourly).toBeGreaterThan(priceForRegime('simples', sem, w).hourly)
+    expect(priceForRegime('mei', com, w).hourly).toBe(priceForRegime('mei', sem, w).hourly)
+    expect(priceForRegime('autonomo', com, w).hourly).toBe(priceForRegime('autonomo', sem, w).hourly)
+  })
+
   it('devolve inviável se não houver horas faturáveis', () => {
     const v = entradas()
     const r = priceForRegime('mei', v, { billableHoursPerYear: 0 })

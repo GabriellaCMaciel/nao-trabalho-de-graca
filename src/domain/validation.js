@@ -16,6 +16,7 @@ export const ENTRADAS_PADRAO = {
   regime: 'mei',
   desiredNet: '5000',
   fixedCosts: '300',
+  accountantCost: '0',
   workDaysPerWeek: '5',
   hoursPerDay: '8',
   billablePercent: '60',
@@ -31,6 +32,7 @@ export const ENTRADAS_PADRAO = {
 const NUMERICOS = {
   desiredNet: { label: 'Líquido desejado por mês', min: 1, max: 150_000 },
   fixedCosts: { label: 'Custos fixos por mês', min: 0, max: 100_000 },
+  accountantCost: { label: 'Contador por mês', min: 0, max: 20_000 },
   workDaysPerWeek: { label: 'Dias de trabalho por semana', min: 1, max: 7, inteiro: true },
   hoursPerDay: { label: 'Horas de trabalho por dia', min: 1, max: 16 },
   billablePercent: { label: 'Horas faturáveis (%)', min: 10, max: 100 },

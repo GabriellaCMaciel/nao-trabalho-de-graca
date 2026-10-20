@@ -10,6 +10,11 @@ describe('validateInputs', () => {
     expect(r.values.regime).toBe('mei')
   })
 
+  it('valida o custo do contador', () => {
+    expect(validateInputs({ ...ENTRADAS_PADRAO, accountantCost: '250' }).values.accountantCost).toBe(250)
+    expect(validateInputs({ ...ENTRADAS_PADRAO, accountantCost: '-5' }).errors.accountantCost).toBeTruthy()
+  })
+
   it('entende vírgula decimal e ponto de milhar', () => {
     const r = validateInputs({ ...ENTRADAS_PADRAO, desiredNet: '7.500,50', fixedCosts: '1.200' })
     expect(r.values.desiredNet).toBe(7500.5)

@@ -14,7 +14,13 @@ import { REGIMES } from './validation.js'
  * @param {ReturnType<typeof calculateWorkload>} workload
  */
 export function priceForRegime(regime, v, workload) {
-  const params = { fixedCosts: v.fixedCosts, inssPlan: v.inssPlan, proLaboreMode: v.proLaboreMode }
+  // Só o Simples Nacional (empresa) exige contador; MEI e autônomo não entram nessa conta.
+  const contador = regime === 'simples' ? v.accountantCost : 0
+  const params = {
+    fixedCosts: v.fixedCosts + contador,
+    inssPlan: v.inssPlan,
+    proLaboreMode: v.proLaboreMode,
+  }
   const liquidoPara = (g) => calculateRegime(regime, g, params).netMonthly
 
   const grossMonthly = solveGrossForNet(liquidoPara, v.desiredNet)
