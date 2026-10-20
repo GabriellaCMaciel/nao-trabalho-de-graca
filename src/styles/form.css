@@ -62,8 +62,8 @@
 }
 
 .field__control:focus-within {
-  border-color: var(--gold);
-  outline: 2px solid var(--gold);
+  border-color: var(--focus);
+  outline: 2px solid var(--focus);
   outline-offset: 1px;
 }
 
@@ -131,12 +131,12 @@
 }
 
 .choice:has(input:checked) {
-  border-color: var(--gold);
-  background: #33205a;
+  border-color: var(--accent);
+  background: var(--surface-3);
 }
 
 .choice:has(input:focus-visible) {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -147,7 +147,7 @@
   width: 1.1rem;
   height: 1.1rem;
   margin: 0;
-  accent-color: var(--gold);
+  accent-color: var(--accent);
 }
 
 .choice__title {

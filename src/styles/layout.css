@@ -63,7 +63,7 @@
   gap: 1rem;
   padding: 0.75rem var(--gutter) calc(0.75rem + env(safe-area-inset-bottom));
   background: var(--surface-2);
-  border-top: 1px solid var(--gold);
+  border-top: 2px solid var(--accent);
 }
 
 .pricebar p {
@@ -77,7 +77,7 @@
 
 .pricebar__value {
   font-variant-numeric: normal;
-  color: var(--gold-strong);
+  color: var(--pearl);
   font-family: var(--font-display);
   font-size: 1.6rem;
   font-weight: 400;
@@ -86,9 +86,9 @@
 
 .pricebar__link {
   padding: 0.6rem 1rem;
-  background: var(--gold);
+  background: var(--accent);
   border-radius: 999px;
-  color: var(--on-gold);
+  color: var(--on-accent);
   font-weight: 700;
   text-decoration: none;
 }

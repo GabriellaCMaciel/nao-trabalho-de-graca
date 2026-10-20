@@ -1,26 +1,35 @@
 /*
- * Tokens de design: preto, roxo escuro e dourado.
- * O dourado é reservado ao que importa (o preço); o resto da interface fica em roxos e lilás.
+ * Tokens de design. Paleta: Midnight, Pearl Perfect, Noir e Ocean.
+ * - Midnight é o fundo dos cartões e Pearl é o texto e o cartão do preço (contraste 13:1).
+ * - Ocean fica nas partes grandes e gráficas (bordas, barras, botão): sobre Midnight ele dá 3,7:1,
+ *   o que não basta para texto pequeno. Texto pequeno usa Pearl.
+ * - Os tons "derivados" são misturas das quatro cores, só para dar profundidade ao fundo.
  */
 :root {
   color-scheme: dark;
 
-  --bg: #150b22;
-  --surface: #1f1235;
-  --surface-2: #2a1a49;
-  --line: #4b3780;
-  --line-soft: #34245b;
+  /* Paleta base */
+  --midnight: #122c4f;
+  --pearl: #fbf9e4;
+  --noir: #000000;
+  --ocean: #5b88b2;
 
-  --text: #f4edff;
-  --muted: #c3b6e0;
+  /* Derivados (mistura das cores acima) */
+  --bg: #0b1d36; /* Midnight escurecido em direção ao Noir */
+  --surface: var(--midnight);
+  --surface-2: #183560;
+  --surface-3: #234a7d;
+  --line: var(--ocean); /* bordas de campos: 3,7:1 sobre Midnight */
+  --line-soft: #2a4a75; /* bordas decorativas dos cartões */
 
-  --gold: #e9b949;
-  --gold-strong: #f6d37c;
-  --on-gold: #2a1700;
+  --text: var(--pearl);
+  --muted: #c3cfdc; /* Pearl esmaecido: 8,9:1 sobre Midnight */
 
-  --violet: #a98bf0;
-  --violet-deep: #7050c4;
+  --accent: var(--ocean);
+  --on-accent: var(--noir); /* 5,6:1 sobre Ocean */
+  --focus: var(--pearl);
 
+  /* Estados: precisam de cor própria para serem entendidos; sempre vêm com texto. */
   --danger: #ff9db3;
   --ok: #8be0b0;
   --warn: #f6d37c;

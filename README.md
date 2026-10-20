@@ -59,7 +59,7 @@ src/
     clt.js                 salário CLT equivalente
     project.js             preço de projeto com margem de risco
   components/              telas em React (formulário, resultado, comparação, avisos)
-  styles/                  tema roxo e dourado em CSS puro
+  styles/                  tema Midnight, Pearl e Ocean em CSS puro (cores em tokens.css)
 ```
 
 ## Atualizando para um novo ano
