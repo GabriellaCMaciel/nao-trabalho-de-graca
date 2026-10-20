@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import Breakdown from './components/Breakdown.jsx'
+import CltCard from './components/CltCard.jsx'
 import InputForm from './components/InputForm.jsx'
 import RegimeComparison from './components/RegimeComparison.jsx'
 import MeiAlert from './components/MeiAlert.jsx'
@@ -51,6 +52,11 @@ export default function App() {
                 <MeiAlert limit={pricing.selected.meiLimit} annualGross={pricing.selected.annualGross} />
               )}
               {pricing.selected.calc && <Breakdown result={pricing.selected} />}
+              <CltCard
+                clt={pricing.clt}
+                grossMonthly={pricing.selected.grossMonthly}
+                desiredNet={validation.values.desiredNet}
+              />
               <RegimeComparison
                 byRegime={pricing.byRegime}
                 best={pricing.best}

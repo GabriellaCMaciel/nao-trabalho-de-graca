@@ -282,3 +282,10 @@
   color: var(--muted);
   font-size: 0.9rem;
 }
+
+.panel__highlight {
+  color: var(--gold-strong);
+  font-family: var(--font-display);
+  font-size: 1.2em;
+  font-weight: 400;
+}
