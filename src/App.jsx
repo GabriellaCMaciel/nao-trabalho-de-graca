@@ -51,7 +51,7 @@ export default function App() {
 
       {pricing?.selected.hourly && <PriceBar hourly={pricing.selected.hourly} />}
 
-      <div className="layout">
+      <main className="layout">
         <InputForm form={form} errors={visibleErrors} onChange={handleChange} onBlur={handleBlur} />
         <section className="results" id="resultado" aria-label="Resultado">
           {pricing ? (
@@ -90,7 +90,7 @@ export default function App() {
             </p>
           )}
         </section>
-      </div>
+      </main>
     </div>
   )
 }

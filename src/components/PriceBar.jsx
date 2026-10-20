@@ -7,7 +7,7 @@ import { formatBRL } from '../domain/money.js'
  */
 export default function PriceBar({ hourly }) {
   return (
-    <div className="pricebar">
+    <aside className="pricebar" aria-label="Resumo do preço">
       <p>
         <span className="pricebar__label">Cobre por hora</span>
         <strong className="pricebar__value">{formatBRL(hourly)}</strong>
@@ -15,6 +15,6 @@ export default function PriceBar({ hourly }) {
       <a className="pricebar__link" href="#resultado">
         Ver detalhes
       </a>
-    </div>
+    </aside>
   )
 }

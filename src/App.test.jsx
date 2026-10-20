@@ -11,6 +11,13 @@ describe('formulário', () => {
     expect(screen.getByLabelText('Custos fixos por mês')).toBeInTheDocument()
   })
 
+  it('tem a estrutura de regiões que leitores de tela usam para navegar', () => {
+    render(<App />)
+    expect(screen.getByRole('main')).toBeInTheDocument()
+    expect(screen.getByRole('banner')).toBeInTheDocument()
+    expect(screen.getByRole('complementary', { name: 'Resumo do preço' })).toBeInTheDocument()
+  })
+
   it('mostra o erro só depois que a pessoa mexe no campo e liga a mensagem ao campo', async () => {
     const user = userEvent.setup()
     render(<App />)
