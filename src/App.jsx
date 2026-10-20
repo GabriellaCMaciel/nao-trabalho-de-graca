@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import Breakdown from './components/Breakdown.jsx'
 import CltCard from './components/CltCard.jsx'
+import Footer from './components/Footer.jsx'
 import InputForm from './components/InputForm.jsx'
 import PriceBar from './components/PriceBar.jsx'
 import ProjectCard from './components/ProjectCard.jsx'
@@ -91,6 +92,8 @@ export default function App() {
           )}
         </section>
       </main>
+
+      <Footer />
     </div>
   )
 }
