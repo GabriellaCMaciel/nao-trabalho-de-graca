@@ -20,6 +20,7 @@
 }
 
 .hero__value {
+  font-variant-numeric: normal; /* números de largura fixa deixam o "1" com espaço sobrando na fonte de título */
   color: var(--gold-strong);
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 11vw, 5.6rem);
@@ -284,6 +285,7 @@
 }
 
 .panel__highlight {
+  font-variant-numeric: normal;
   color: var(--gold-strong);
   font-family: var(--font-display);
   font-size: 1.2em;

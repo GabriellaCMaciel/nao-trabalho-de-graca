@@ -76,6 +76,7 @@
 }
 
 .pricebar__value {
+  font-variant-numeric: normal;
   color: var(--gold-strong);
   font-family: var(--font-display);
   font-size: 1.6rem;
