@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import Breakdown from './components/Breakdown.jsx'
 import InputForm from './components/InputForm.jsx'
 import PriceHero from './components/PriceHero.jsx'
 import { calculatePricing } from './domain/pricing.js'
@@ -42,7 +43,10 @@ export default function App() {
         <InputForm form={form} errors={visibleErrors} onChange={handleChange} onBlur={handleBlur} />
         <section className="results" aria-label="Resultado">
           {pricing ? (
-            <PriceHero result={pricing.selected} workload={pricing.workload} />
+            <>
+              <PriceHero result={pricing.selected} workload={pricing.workload} />
+              {pricing.selected.calc && <Breakdown result={pricing.selected} />}
+            </>
           ) : (
             <p className="results__empty">
               Preencha os campos com números válidos para ver o seu preço por hora.
