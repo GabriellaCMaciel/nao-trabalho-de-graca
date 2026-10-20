@@ -5,7 +5,7 @@ import { formatBRL } from '../domain/money.js'
  * @param {{ clt: object, grossMonthly?: number, desiredNet: number }} props
  */
 export default function CltCard({ clt, grossMonthly, desiredNet }) {
-  const vezes = grossMonthly ? grossMonthly / clt.salario : null
+  const vezes = grossMonthly ? Math.round((grossMonthly / clt.salario) * 10) / 10 : null
 
   return (
     <section className="panel" aria-labelledby="clt-title">
@@ -38,8 +38,8 @@ export default function CltCard({ clt, grossMonthly, desiredNet }) {
 
       {vezes && (
         <p className="panel__note">
-          Como freelancer você precisa faturar cerca de {vezes.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}{' '}
-          vezes esse salário, porque paga seus próprios impostos, custos, férias e o tempo sem cliente.
+          Como freelancer você precisa faturar cerca de {vezes.toLocaleString('pt-BR')} {vezes === 1 ? 'vez' : 'vezes'}{' '}
+          esse salário, porque paga seus próprios impostos, custos, férias e o tempo sem cliente.
         </p>
       )}
       <p className="panel__note">

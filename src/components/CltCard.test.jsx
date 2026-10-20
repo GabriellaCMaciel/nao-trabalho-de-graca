@@ -22,6 +22,11 @@ describe('CltCard', () => {
     expect(screen.getByText(/vezes esse salário/)).toBeInTheDocument()
   })
 
+  it('usa o singular quando a proporção é uma vez', () => {
+    render(<CltCard clt={{ ...p.clt, salario: 1000 }} grossMonthly={1004} desiredNet={5000} />)
+    expect(screen.getByText(/cerca de 1 vez esse salário/)).toBeInTheDocument()
+  })
+
   it('sem faturamento calculado, omite a comparação de vezes', () => {
     render(<CltCard clt={p.clt} desiredNet={5000} />)
     expect(screen.queryByText(/vezes esse salário/)).not.toBeInTheDocument()
