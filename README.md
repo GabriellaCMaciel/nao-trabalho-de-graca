@@ -21,6 +21,8 @@ Também mostra:
 
 > É uma estimativa para planejamento. Não substitui um contador.
 
+**Site:** https://gabriellacmaciel.github.io/nao-trabalho-de-graca/
+
 ## Como rodar
 
 Precisa do Node 22 (ou 20.19 ou mais novo).
@@ -32,6 +34,10 @@ npm test         # roda os testes
 npm run lint     # confere o estilo do código
 npm run build    # gera a versão de produção em dist/
 ```
+
+## Publicação
+
+O site é publicado no GitHub Pages por `.github/workflows/deploy.yml`, sempre que algo entra na `main` (depois de passar nos testes). Na primeira vez, em **Settings → Pages**, a opção **Source** precisa estar em **GitHub Actions**.
 
 ## Como a conta funciona
 
