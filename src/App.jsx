@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react'
 import InputForm from './components/InputForm.jsx'
+import PriceHero from './components/PriceHero.jsx'
+import { calculatePricing } from './domain/pricing.js'
 import { ENTRADAS_PADRAO, validateInputs } from './domain/validation.js'
 import './styles/layout.css'
 
@@ -8,6 +10,12 @@ export default function App() {
   const [touched, setTouched] = useState({})
 
   const validation = useMemo(() => validateInputs(form), [form])
+
+  // O cálculo só roda com dados válidos; useMemo evita refazer a conta a cada renderização.
+  const pricing = useMemo(
+    () => (validation.isValid ? calculatePricing(validation.values) : null),
+    [validation],
+  )
 
   // Só mostramos o erro de um campo depois que a pessoa mexeu nele.
   const visibleErrors = Object.fromEntries(
@@ -33,7 +41,13 @@ export default function App() {
       <div className="layout">
         <InputForm form={form} errors={visibleErrors} onChange={handleChange} onBlur={handleBlur} />
         <section className="results" aria-label="Resultado">
-          <p>{validation.isValid ? 'Dados válidos. O resultado aparece aqui.' : 'Corrija os campos destacados.'}</p>
+          {pricing ? (
+            <PriceHero result={pricing.selected} workload={pricing.workload} />
+          ) : (
+            <p className="results__empty">
+              Preencha os campos com números válidos para ver o seu preço por hora.
+            </p>
+          )}
         </section>
       </div>
     </div>
