@@ -8,7 +8,7 @@
 export const round2 = (n) => Math.round((n + Number.EPSILON) * 100) / 100
 
 /** Arredonda para CIMA em centavos. O epsilon evita subir 1 centavo por ruído de ponto flutuante. */
-export const ceil2 = (n) => Math.ceil(n * 100 - 1e-7) / 100
+export const ceil2 = (n) => Math.ceil(n * 100 - 1e-7) / 100 || 0 // "|| 0" troca -0 por 0
 
 export const clamp = (n, min, max) => Math.min(Math.max(n, min), max)
 

@@ -14,6 +14,10 @@ describe('round2 / ceil2 / clamp', () => {
     expect(ceil2(10.01)).toBe(10.01)
     expect(ceil2(0.1 + 0.2)).toBe(0.3)
   })
+  it('ceil2 nunca devolve -0 (que apareceria como "-R$ 0,00")', () => {
+    expect(Object.is(ceil2(0), 0)).toBe(true)
+    expect(Object.is(ceil2(-0.000001), 0)).toBe(true)
+  })
   it('clamp limita o valor ao intervalo', () => {
     expect(clamp(5, 0, 3)).toBe(3)
     expect(clamp(-1, 0, 3)).toBe(0)
