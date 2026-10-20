@@ -1,0 +1,45 @@
+/*
+ * Tokens de design. Paleta: Midnight, Pearl Perfect, Noir e Ocean.
+ * - Midnight é o fundo dos cartões e Pearl é o texto e o cartão do preço (contraste 13:1).
+ * - Ocean fica nas partes grandes e gráficas (bordas, barras, botão): sobre Midnight ele dá 3,7:1,
+ *   o que não basta para texto pequeno. Texto pequeno usa Pearl.
+ * - Os tons "derivados" são misturas das quatro cores, só para dar profundidade ao fundo.
+ */
+:root {
+  color-scheme: dark;
+
+  /* Paleta base */
+  --midnight: #122c4f;
+  --pearl: #fbf9e4;
+  --noir: #000000;
+  --ocean: #5b88b2;
+
+  /* Derivados (mistura das cores acima) */
+  --bg: #0b1d36; /* Midnight escurecido em direção ao Noir */
+  --surface: var(--midnight);
+  --surface-2: #183560;
+  --surface-3: #234a7d;
+  --line: var(--ocean); /* bordas de campos: 3,7:1 sobre Midnight */
+  --line-soft: #2a4a75; /* bordas decorativas dos cartões */
+
+  --text: var(--pearl);
+  --muted: #c3cfdc; /* Pearl esmaecido: 8,9:1 sobre Midnight */
+
+  --accent: var(--ocean);
+  --on-accent: var(--noir); /* 5,6:1 sobre Ocean */
+  --focus: var(--pearl);
+
+  /* Estados: precisam de cor própria para serem entendidos; sempre vêm com texto. */
+  --danger: #ff9db3;
+  --ok: #8be0b0;
+  --warn: #f6d37c;
+
+  --font-display: 'Young Serif', Georgia, 'Times New Roman', serif;
+  --font-body: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-s: 8px;
+  --radius-m: 14px;
+  --radius-l: 24px;
+
+  --gutter: 16px;
+}
