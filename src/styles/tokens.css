@@ -1,0 +1,36 @@
+/*
+ * Tokens de design: preto, roxo escuro e dourado.
+ * O dourado é reservado ao que importa (o preço); o resto da interface fica em roxos e lilás.
+ */
+:root {
+  color-scheme: dark;
+
+  --bg: #150b22;
+  --surface: #1f1235;
+  --surface-2: #2a1a49;
+  --line: #4b3780;
+  --line-soft: #34245b;
+
+  --text: #f4edff;
+  --muted: #c3b6e0;
+
+  --gold: #e9b949;
+  --gold-strong: #f6d37c;
+  --on-gold: #2a1700;
+
+  --violet: #a98bf0;
+  --violet-deep: #7050c4;
+
+  --danger: #ff9db3;
+  --ok: #8be0b0;
+  --warn: #f6d37c;
+
+  --font-display: 'Young Serif', Georgia, 'Times New Roman', serif;
+  --font-body: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-s: 8px;
+  --radius-m: 14px;
+  --radius-l: 24px;
+
+  --gutter: 16px;
+}

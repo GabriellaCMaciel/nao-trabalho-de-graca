@@ -15,7 +15,7 @@ const cspPlugin = () => ({
       attrs: {
         'http-equiv': 'Content-Security-Policy',
         content:
-          "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; " +
+          "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self' data:; " +
           "connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'",
       },
       injectTo: 'head-prepend',

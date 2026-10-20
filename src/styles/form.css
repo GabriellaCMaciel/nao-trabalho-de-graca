@@ -1,0 +1,157 @@
+.form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.group {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 1.25rem;
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-l);
+}
+
+.group__title {
+  padding: 0 0.5rem;
+  margin-left: -0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.group__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.group__row--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 480px) {
+  .group__row--3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+}
+
+.field__label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.field__control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.85rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+}
+
+.field__control:focus-within {
+  border-color: var(--gold);
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+.field__control.is-invalid {
+  border-color: var(--danger);
+}
+
+.field__control input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.7rem 0;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font: inherit;
+  font-size: 1.05rem;
+}
+
+.field__control input:focus-visible {
+  outline: none; /* o foco aparece no contêiner (.field__control:focus-within) */
+}
+
+.field__affix {
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.field__hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.field__error {
+  color: var(--danger);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.choices {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.choices__legend {
+  margin-bottom: 0.4rem;
+  padding: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.choice {
+  position: relative;
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.8rem 1rem 0.8rem 2.8rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+}
+
+.choice:has(input:checked) {
+  border-color: var(--gold);
+  background: #33205a;
+}
+
+.choice:has(input:focus-visible) {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.choice input {
+  position: absolute;
+  left: 1rem;
+  top: 1.05rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+  accent-color: var(--gold);
+}
+
+.choice__title {
+  font-weight: 700;
+}
+
+.choice__desc {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
