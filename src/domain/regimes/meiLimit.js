@@ -6,7 +6,7 @@ import { MEI } from '../tax2026.js'
  * - ok:              abaixo de 80% do limite
  * - warning:         entre 80% e 100%: perto do limite, vale planejar a mudança
  * - over:            passou até 20% do limite: sai do MEI só no ano seguinte, pagando imposto sobre o excesso
- * - overRetroactive: passou mais de 20%: o desenquadramento vale desde o mês em que estourou
+ * - overRetroactive: passou mais de 20%: o desenquadramento é retroativo (com cobrança de imposto sobre o que já faturou)
  *
  * Confirme sempre a regra vigente no Portal do Empreendedor ou com um contador.
  *

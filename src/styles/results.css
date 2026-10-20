@@ -231,3 +231,54 @@
 .compare__status.is-blocked {
   color: var(--danger);
 }
+
+/* Aviso do limite do MEI: a situação vem no título e no texto, a cor só reforça. */
+.alert {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-left: 6px solid var(--ok);
+  border-radius: var(--radius-l);
+}
+
+.alert--warning {
+  border-left-color: var(--warn);
+}
+
+.alert--over,
+.alert--overRetroactive {
+  border-left-color: var(--danger);
+}
+
+.alert__title {
+  font-size: 1.2rem;
+}
+
+.alert__meter {
+  height: 0.6rem;
+  overflow: hidden;
+  background: var(--surface-2);
+  border-radius: 999px;
+}
+
+.alert__meter span {
+  display: block;
+  height: 100%;
+  background: var(--ok);
+}
+
+.alert--warning .alert__meter span {
+  background: var(--warn);
+}
+
+.alert--over .alert__meter span,
+.alert--overRetroactive .alert__meter span {
+  background: var(--danger);
+}
+
+.alert__numbers {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
