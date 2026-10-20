@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import Breakdown from './components/Breakdown.jsx'
 import InputForm from './components/InputForm.jsx'
+import RegimeComparison from './components/RegimeComparison.jsx'
 import PriceHero from './components/PriceHero.jsx'
 import { calculatePricing } from './domain/pricing.js'
 import { ENTRADAS_PADRAO, validateInputs } from './domain/validation.js'
@@ -46,6 +47,13 @@ export default function App() {
             <>
               <PriceHero result={pricing.selected} workload={pricing.workload} />
               {pricing.selected.calc && <Breakdown result={pricing.selected} />}
+              <RegimeComparison
+                byRegime={pricing.byRegime}
+                best={pricing.best}
+                selected={validation.values.regime}
+                semContador={validation.values.accountantCost === 0}
+                onSelect={(regime) => handleChange('regime', regime)}
+              />
             </>
           ) : (
             <p className="results__empty">
