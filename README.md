@@ -2,6 +2,8 @@
 
 Calculadora de preço por hora para freelancers brasileiros.
 
+🔗 **Acesse:** [nao-trabalho-de-graca.vercel.app](https://nao-trabalho-de-graca.vercel.app/)
+
 Você diz quanto quer ganhar **limpo** no mês. A calculadora devolve quanto cobrar por hora, por dia e por projeto, já com imposto, férias, custos e o tempo que você não consegue faturar.
 
 Funciona para três formas de trabalhar no Brasil (regras de **2026**):
